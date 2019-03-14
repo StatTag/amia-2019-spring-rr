@@ -1,0 +1,81 @@
+﻿algorithm,domain,group,term,code_system,code,include,exclude,source
+1,dx,dm_type_1,Type 1 Diabetes,ICD-9,250.x1,1,0,phenotype
+1,dx,dm_type_1,Type 1 Diabetes,ICD-9,250.x3,1,0,phenotype
+1,dx,dm_type_2,Type 2 Diabetes,ICD-9,250.x0,1,0,phenotype
+1,dx,dm_type_2,Type 2 Diabetes,ICD-9,250.x2,1,0,phenotype
+1,dx,dm_type_2,Type 2 Diabetes,ICD-9,250.10,0,1,phenotype
+1,dx,dm_type_2,Type 2 Diabetes,ICD-9,250.12,0,1,phenotype
+*,med,dm_type_1,insulin,RxNorm,139825,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,274783,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,314684,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,352385,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,400008,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,51428,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,5856,1,0,phenotype
+*,med,dm_type_1,insulin,RxNorm,86009,1,0,phenotype
+*,med,dm_type_1,pramlintide,RxNorm,139953,1,0,phenotype
+*,med,dm_type_2,acetohexamide,RxNorm,173,1,0,phenotype
+*,med,dm_type_2,tolazamide,RxNorm,10633,1,0,phenotype
+*,med,dm_type_2,chlorpropamide,RxNorm,2404,1,0,phenotype
+*,med,dm_type_2,glipizide,RxNorm,4821,1,0,phenotype
+*,med,dm_type_2,glipizide,RxNorm,217360,1,0,phenotype
+*,med,dm_type_2,glyburide,RxNorm,4815,1,0,phenotype
+*,med,dm_type_2,glyburide,RxNorm,4815,1,0,phenotype
+*,med,dm_type_2,glyburide,RxNorm,4815,1,0,phenotype
+*,med,dm_type_2,glimepiride,RxNorm,25789,1,0,phenotype
+*,med,dm_type_2,repaglinide,RxNorm,73044,1,0,phenotype
+*,med,dm_type_2,nateglinide,RxNorm,274332,1,0,phenotype
+*,med,dm_type_2,metformin,RxNorm,6809,1,0,phenotype
+*,med,dm_type_2,rosiglitazone,RxNorm,84108,1,0,phenotype
+*,med,dm_type_2,pioglitazone,RxNorm,33738,1,0,phenotype
+*,med,dm_type_2,troglitazone,RxNorm,72610,1,0,phenotype
+*,med,dm_type_2,acarbose,RxNorm,16681,1,0,phenotype
+*,med,dm_type_2,miglitol,RxNorm,30009,1,0,phenotype
+*,med,dm_type_2,sitagliptin,RxNorm,593411,1,0,phenotype
+*,med,dm_type_2,exenatide,RxNorm,60548,1,0,phenotype
+*,lab,dm,Fasting glucose,LOINC,1558-6,1,0,phenotype
+*,lab,dm,Random glucose,LOINC,2339-0,1,0,phenotype
+*,lab,dm,Random glucose,LOINC,2345-7,1,0,phenotype
+*,lab,dm,Hemoglobin A1C,LOINC,4548-4,1,0,phenotype
+*,lab,dm,Hemoglobin A1C,LOINC,17856-6,1,0,phenotype
+*,lab,dm,Hemoglobin A1C,LOINC,4549-2,1,0,phenotype
+*,lab,dm,Hemoglobin A1C,LOINC,17855-8,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847187,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847191,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847197,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847203,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847207,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847211,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847230,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847239,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847252,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847256,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847259,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847263,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847278,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847416,1,0,phenotype
+8,supply,dm,Insulin syringes,RxNorm,847417,1,0,phenotype
+8,dx,dm,Diabetes mellitus (T1 & T2),ICD-9,250.xx,1,0,phenotype
+8,dx,dm,Impaired fasting glucose,ICD-9,790.21,1,0,phenotype
+8,dx,dm,Impaired oral glucose tolerance test,ICD-9,790.22,1,0,phenotype
+8,dx,dm,Abnormal glucose not otherwise spec.,ICD-9,790.2,1,0,phenotype
+8,dx,dm,Abnormal glucose not otherwise spec.,ICD-9,790.29,1,0,phenotype
+8,dx,dm,Abnormal glucose during pregnancy,ICD-9,648.8x,1,0,phenotype
+8,dx,dm,Gestational diabetes,ICD-9,648.0x,1,0,phenotype
+8,dx,dm,Glycosuria,ICD-9,791.5,1,0,phenotype
+8,dx,dm,Dysmetabolic syndrome X,ICD-9,277.7,1,0,phenotype
+8,dx,dm,Family history of diabetes mellitus,ICD-9,V18.0,1,0,phenotype
+8,dx,dm,Screening for diabetes mellitus,ICD-9,V77.1,1,0,phenotype
+1,dx,dm_type_2,Diabetic retinopathy associated with type II diabetes mellitus (disorder),SNOMED CT,422034002,1,0,custom
+1,dx,dm_type_2,Nonproliferative diabetic retinopathy due to type 2 diabetes mellitus (disorder),SNOMED CT,1.551E+12,1,0,custom
+1,dx,dm_type_2,Macular edema and retinopathy due to type 2 diabetes mellitus (disorder),SNOMED CT,9.7331E+13,1,0,custom
+1,dx,dm_type_2,Diabetic renal disease (disorder),SNOMED CT,127013003,1,0,custom
+1,dx,dm_type_2,Neuropathy due to type 2 diabetes mellitus (disorder),SNOMED CT,3.68581E+14,1,0,custom
+1,dx,dm_type_2,Proliferative diabetic retinopathy due to type II diabetes mellitus (disorder),SNOMED CT,1.501E+12,1,0,custom
+1,dx,dm_type_2,Microalbuminuria due to type 2 diabetes mellitus (disorder),SNOMED CT,9.0781E+13,1,0,custom
+1,dx,dm_type_2,Proteinuria due to type 2 diabetes mellitus (disorder),SNOMED CT,1.57141E+14,1,0,custom
+1,dx,dm_type_2,Diabetes mellitus type 2 (disorder),SNOMED CT,44054006,1,0,custom
+*,med,dm_type_1,insulin human  isophane 70 UNT/ML / Regular Insulin  Human 30 UNT/ML Injectable Suspension [Humulin],RxNorm,106892,1,0,custom
+*,med,dm_type_1,Insulin Lispro 100 UNT/ML Injectable Solution [Humalog],RxNorm,865098,1,0,custom
+*,med,dm_type_2,24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet,RxNorm,860975,1,0,custom
+8,dx,dm,Metabolic syndrome X (disorder),SNOMED CT,237602007,1,0,custom
