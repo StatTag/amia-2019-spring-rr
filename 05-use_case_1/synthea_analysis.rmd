@@ -61,13 +61,18 @@ packages <- as.data.frame(installed.packages(fields = "License")) %>%
 session <- sessionInfo(package = NULL)
 ```
 
+### R Base Packages
 The following packages were loaded in the session while this code was executed.  This document can be assumed to have a dependency on these packages.
+```{r, echo=FALSE}
+knitr::kable(installed.packages()[sessionInfo()$basePkgs, c("Package", "LibPath", "Version", "License", "NeedsCompilation", "Built", "Depends")])
+```
+### Other R Packages
 ```{r, echo=FALSE}
 knitr::kable(installed.packages()[names(sessionInfo()$otherPkgs), c("Package", "LibPath", "Version", "License", "NeedsCompilation", "Built", "Depends")])
 ```
 
 
-Full details about the installed packages:
+Full details about the additional (non-base) packages:
 ```{r, echo=FALSE}
 print(session$otherPkgs)
 ```
