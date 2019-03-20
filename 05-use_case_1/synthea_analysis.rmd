@@ -53,3 +53,21 @@ ggplot(patient_cohort, aes(enc_count)) +
   geom_bar(fill = "#0073C2FF")
 ```
 
+
+## R Environment Details
+```{r, echo=FALSE, include = FALSE}
+packages <- as.data.frame(installed.packages(fields = "License")) %>%
+  select(Package, LibPath, Version, License, NeedsCompilation, Built, Depends)
+session <- sessionInfo(package = NULL)
+```
+
+The following packages were loaded in the session while this code was executed.  This document can be assumed to have a dependency on these packages.
+```{r, echo=FALSE}
+knitr::kable(installed.packages()[names(sessionInfo()$otherPkgs), c("Package", "LibPath", "Version", "License", "NeedsCompilation", "Built", "Depends")])
+```
+
+
+Full details about the installed packages:
+```{r, echo=FALSE}
+print(session$otherPkgs)
+```
