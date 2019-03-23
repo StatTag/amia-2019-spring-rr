@@ -1,0 +1,6 @@
+DIAGNOSIS
+Diabetes mellitus
+Hypertension
+
+HISTORY
+Jon Doe was recently diagnosed with Type 2 Diabetes, and is in today for his first consultation on diet and exercise.
