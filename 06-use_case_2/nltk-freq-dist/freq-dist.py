@@ -12,6 +12,8 @@ if (len(sys.argv) < 3):
   print "Usage: nltk-freq-dist input-dir/ output-dir/"
   sys.exit(1)
 
+print "Input dir : ", sys.argv[1]
+
 input_dir = os.path.join("/tmp", sys.argv[1])
 output_dir = os.path.join("/tmp", sys.argv[2])
 print "Input from : ", input_dir
@@ -28,6 +30,7 @@ with open(os.path.join(output_dir, 'results.csv'), 'wb') as csvfile:
     if not filename.endswith(".txt"):
       continue
 
+    record_id = filename.replace(".txt", "")
     input_file_path = os.path.join(input_dir, filename)
     text_file = open(input_file_path)
     print "Processing... ", input_file_path
@@ -39,4 +42,4 @@ with open(os.path.join(output_dir, 'results.csv'), 'wb') as csvfile:
     # Calculate frequency distribution and write to output CSV
     fdist = nltk.FreqDist(words)
     for word, frequency in fdist.most_common(50):
-      results_writer.writerow([filename, word, frequency])
+      results_writer.writerow([record_id, word, frequency])
