@@ -49,8 +49,8 @@ knitr::kable(Table1)
 **Figure 1.** Encounter Distribution
 
 ```{r, echo=FALSE, comment=NA, size = 'tiny'}
-ggplot(patient_cohort, aes(enc_count)) +
-  geom_bar(fill = "#0073C2FF")
+barplot(table(patient_cohort$enc_count), main="Encounter Distribution", 
+   xlab="Number of Encounters")
 ```
 
 

@@ -58,8 +58,8 @@ knitr::kable(Table1)
 
 ```{r, echo=FALSE, comment=NA, size = 'tiny'}
 ##>>>ST:Figure(Label="Encounter distribution", Frequency="On Demand")
-ggplot(patient_cohort, aes(enc_count)) +
-  geom_bar(fill = "#0073C2FF")
+barplot(table(patient_cohort$enc_count), main="Encounter Distribution", 
+   xlab="Number of Encounters")
 ##<<<
 ```
 
