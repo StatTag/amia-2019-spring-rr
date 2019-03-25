@@ -11,7 +11,7 @@ library(scales)
 
 knitr::opts_chunk$set(echo = TRUE)
 
-data_base_path <- "../02-analysis/adjusted_patient_data"
+data_base_path <- "../../02-analysis/adjusted_patient_data"
 data_file_patients <- file.path(data_base_path, "patients_with_dm_annotations.csv")
 
 patient_cohort <- read.csv(data_file_patients, header = TRUE, sep = ",", stringsAsFactors = FALSE)
@@ -59,6 +59,8 @@ ggplot(patient_cohort, aes(enc_count)) +
 packages <- as.data.frame(installed.packages(fields = "License")) %>%
   select(Package, LibPath, Version, License, NeedsCompilation, Built, Depends)
 session <- sessionInfo(package = NULL)
+
+sessionInfo()$R.version$version.string
 ```
 
 ### R Base Packages
