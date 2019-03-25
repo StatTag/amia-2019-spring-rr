@@ -39,7 +39,8 @@ stop_words_file = open("./config/stop_words.txt", "r")
 stop_words = stop_words_file.read().splitlines()
 stop_words_file.close()
 
-with open(os.path.join(output_dir, 'results.csv'), 'wb') as csvfile:
+current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+with open(os.path.join(output_dir, 'results-{}.csv'.format(current_time)), 'wb') as csvfile:
   results_writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
   for filename in os.listdir(input_dir):
     if not filename.endswith(".txt"):
