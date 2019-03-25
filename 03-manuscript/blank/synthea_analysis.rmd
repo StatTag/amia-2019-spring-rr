@@ -1,0 +1,78 @@
+---
+title: "Synthea&trade; Results for T2DM Phenotype"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(tableone)
+library(lubridate)
+library(scales)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+data_base_path <- "../02-analysis/adjusted_patient_data"
+data_file_patients <- file.path(data_base_path, "patients_with_dm_annotations.csv")
+
+patient_cohort <- read.csv(data_file_patients, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+```
+
+```{r, echo=FALSE}
+# Data manipulation to get case/control status, and calculate age
+patient_cohort <- patient_cohort %>%
+  mutate(pt_dm_control = as.logical(pt_dm_control), pt_dm_case = as.logical(pt_dm_case)) %>%
+  mutate(dob = as.Date(BIRTHDATE)) %>%
+  mutate(age = as.integer(interval(dob, today()) / duration(num = 1, units = "years")))
+patient_cohort$case_control <- ifelse(patient_cohort$pt_dm_case, "Case", ifelse(patient_cohort$pt_dm_control, "Control", "Unassigned"))
+
+TableOne <- CreateTableOne(data = patient_cohort, vars=c("age", "GENDER", "enc_count", "diabtes_history"), strata= "case_control")
+Table1 <- print(TableOne, quote = FALSE, noSpaces = TRUE, printToggle = FALSE, test=FALSE, explain=TRUE, showAllLevels = TRUE)
+```
+## Summary of Results
+```{r, echo=FALSE}
+population_size <- nrow(patient_cohort)
+num_cases <- nrow(patient_cohort[patient_cohort$case_control == 'Case',])
+num_controls <- nrow(patient_cohort[patient_cohort$case_control == 'Control',])
+```
+
+Of the `r population_size` patients in the database, `r num_cases` (`r percent((num_cases / population_size))`) met the case definition, and `r num_controls` (`r percent((num_controls / population_size))`) met the control definition.
+
+Please note that the proportion of case and control definitions does not match expected regional or national prevalence levels, but is consistent with the expected with the inputs given to Synthea&trade;.
+
+## Cohort Characteristics
+
+**Table 1.** Participant Characteristics
+```{r, echo=FALSE, comment=NA, size = 'tiny'}
+knitr::kable(Table1)
+```
+
+**Figure 1.** Encounter Distribution
+
+```{r, echo=FALSE, comment=NA, size = 'tiny'}
+ggplot(patient_cohort, aes(enc_count)) +
+  geom_bar(fill = "#0073C2FF")
+```
+
+
+## R Environment Details
+```{r, echo=FALSE, include = FALSE}
+packages <- as.data.frame(installed.packages(fields = "License")) %>%
+  select(Package, LibPath, Version, License, NeedsCompilation, Built, Depends)
+session <- sessionInfo(package = NULL)
+```
+
+### R Base Packages
+The following packages were loaded in the session while this code was executed.  This document can be assumed to have a dependency on these packages.
+```{r, echo=FALSE}
+knitr::kable(installed.packages()[sessionInfo()$basePkgs, c("Package", "LibPath", "Version", "License", "NeedsCompilation", "Built", "Depends")])
+```
+### Other R Packages
+```{r, echo=FALSE}
+knitr::kable(installed.packages()[names(sessionInfo()$otherPkgs), c("Package", "LibPath", "Version", "License", "NeedsCompilation", "Built", "Depends")])
+```
+
+
+Full details about the additional (non-base) packages:
+```{r, echo=FALSE}
+print(session$otherPkgs)
+```

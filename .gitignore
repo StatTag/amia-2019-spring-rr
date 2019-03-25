@@ -29,3 +29,5 @@ Temporary Items
 .Rhistory
 
 Installers/
+*.st-bak
+*.pptx

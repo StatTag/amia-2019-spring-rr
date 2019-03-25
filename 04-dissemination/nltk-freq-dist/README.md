@@ -9,7 +9,7 @@ Verify that the image was created locally.
 
 If you need to remove the image the following command will remove the image locally.
 
-`docker rmi nltk-bow`
+`docker rmi nltk-freq-dist`
 
 ## Running the Docker image
 Change to the directory where you have a folder containing input (a list of *.txt files), and a folder that can be used for writing results.  Let's say that I have this under /Users/jon/test-data:
@@ -18,7 +18,7 @@ Change to the directory where you have a folder containing input (a list of *.tx
 
 In my `test-data` folder, we have an input folder named "input" an and output folder named "output". I can run the code through the container using the following command:
 
-`docker run -it --rm -v "$PWD":/tmp --name nltk-freq-dist-instance nltk-freq-dist input output`
+`docker run --rm -v "$PWD":/tmp nltk-freq-dist input output`
 
 Here the `-v "$PWD":/tmp` option is telling Docker to map the current directory on our machine (the directory we're in, which Docker discovers via `"$PWD"`) to the `/tmp` directory in the container.  Within the container, it can access `/tmp/input` to get to all of our text files, and it can write results to `/tmp/output`.  When the container stops running, the files in the input and output directory still exist.
 

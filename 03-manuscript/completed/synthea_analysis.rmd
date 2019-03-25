@@ -11,7 +11,7 @@ library(scales)
 
 knitr::opts_chunk$set(echo = TRUE)
 
-data_base_path <- "./adjusted_patient_data"
+data_base_path <- "../../02-analysis/adjusted_patient_data"
 data_file_patients <- file.path(data_base_path, "patients_with_dm_annotations.csv")
 
 patient_cohort <- read.csv(data_file_patients, header = TRUE, sep = ",", stringsAsFactors = FALSE)
@@ -30,9 +30,15 @@ Table1 <- print(TableOne, quote = FALSE, noSpaces = TRUE, printToggle = FALSE, t
 ```
 ## Summary of Results
 ```{r, echo=FALSE}
+##>>>ST:Value(Label="Population size", Frequency="On Demand", Type="Default")
 population_size <- nrow(patient_cohort)
+##<<<
+##>>>ST:Value(Label="Number of cases", Frequency="On Demand", Type="Default")
 num_cases <- nrow(patient_cohort[patient_cohort$case_control == 'Case',])
+##<<<
+##>>>ST:Value(Label="Number of controls", Frequency="On Demand", Type="Default")
 num_controls <- nrow(patient_cohort[patient_cohort$case_control == 'Control',])
+##<<<
 ```
 
 Of the `r population_size` patients in the database, `r num_cases` (`r percent((num_cases / population_size))`) met the case definition, and `r num_controls` (`r percent((num_controls / population_size))`) met the control definition.
@@ -43,14 +49,18 @@ Please note that the proportion of case and control definitions does not match e
 
 **Table 1.** Participant Characteristics
 ```{r, echo=FALSE, comment=NA, size = 'tiny'}
+##>>>ST:Table(Label="Participant characteristics", Frequency="On Demand", Label="Participant characteristics", Frequency="On Demand", Type="Numeric", AllowInvalid=True, Decimals=0, Thousands=False)
 knitr::kable(Table1)
+##<<<
 ```
 
 **Figure 1.** Encounter Distribution
 
 ```{r, echo=FALSE, comment=NA, size = 'tiny'}
+##>>>ST:Figure(Label="Encounter distribution", Frequency="On Demand")
 ggplot(patient_cohort, aes(enc_count)) +
   geom_bar(fill = "#0073C2FF")
+##<<<
 ```
 
 
@@ -59,6 +69,10 @@ ggplot(patient_cohort, aes(enc_count)) +
 packages <- as.data.frame(installed.packages(fields = "License")) %>%
   select(Package, LibPath, Version, License, NeedsCompilation, Built, Depends)
 session <- sessionInfo(package = NULL)
+
+##>>>ST:Verbatim(Label="R Version", Frequency="On Demand")
+sessionInfo()$R.version$version.string
+##<<<
 ```
 
 ### R Base Packages

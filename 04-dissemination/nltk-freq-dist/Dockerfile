@@ -1,5 +1,7 @@
 FROM python:2.7.16-alpine
 
+LABEL=1.0.0
+
 WORKDIR /usr/src/app
 
 COPY . .
